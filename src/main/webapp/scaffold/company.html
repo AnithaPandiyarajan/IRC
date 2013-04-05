@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Resource Base</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<script type="text/javascript" src="../resources/js/jquery-1.6.4.js"></script>
+		<script type="text/javascript" src="../resources/js/jquery.mobile-1.0.min.js"></script>
+		<script type="text/javascript" src="../resources/js/forge-aerogear.js"></script>
+		<link rel="stylesheet" type="text/css" href="../resources/css/jquery.mobile-1.0.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../resources/css/forge-aerogear.css"/>
+	</head>
+	<body onload="aerogear.initialize('../rest/company')">
+	<div id="container" >
+	<div class="logo">
+            <img src="../img/aerogear_logo_150px.png"/>
+        </div>
+        <section>
+	
+	  <aside id="info-aside" data-role="page" data-theme="a">
+		<article data-role="page">
+			<header data-role="header" data-theme="a">
+				<h3>Project Details</h3>
+			</header>
+		<!-- Search -->
+		<article id="search-article" data-role="page">
+			<header data-role="header" data-theme="a">
+				<h3>Search Project entities</h3>
+			</header>
+			<section data-role="content">
+				<form name="search-form" id="search-form" data-ajax="false">
+					<fieldset>
+						<div>
+							<label for="name">Name:</label>
+							<input id="name" name="name" type="search"/>
+						</div>
+						<div>
+							<label for="publiclyListed">Publicly Listed</label>
+							<input id="publiclyListed" name="publiclyListed" type="checkbox"/>
+						</div>
+						<div data-role="controlgroup" data-type="horizontal" class="buttons">
+							<input type="submit" name="search" onclick="return aerogear.search()" data-icon="search" value="Search"/>
+						</div>
+					</fieldset>
+				</form>
+				<table id="search-results">
+					<thead>
+						<tr>
+							<th id="search-results-name">Name</th>
+							<th id="search-results-publiclyListed">Publicly Listed</th>
+							<th id="search-results-color">Color</th>
+						</tr>
+					</thead>
+					<tbody/>
+				</table>
+			</section>
+			<!-- 
+			<footer data-role="footer" data-position="fixed">
+				<div class="footer_left">
+					<a href="../index.html" data-role="button" data-icon="home">Home</a>
+				</div>
+				<div class="footer_right">
+					<a data-role="button" data-icon="plus" onclick="return aerogear.create()">Create</a>
+				</div>
+			</footer>
+			 -->
+		</article>
+
+		<!-- View 
+		<article id="view-article" data-role="page">
+			<header data-role="header" data-theme="a">
+				<h3>View Company</h3>
+			</header>
+			<section data-role="content">
+				<fieldset id="view-fieldset">
+					<div>
+						<label for="name">Name:</label>
+						<output id="name" name="name"></output>
+					</div>
+					<div>
+						<label for="publiclyListed">Publicly Listed:</label>
+						<output id="publiclyListed" name="publiclyListed"></output>
+					</div>
+					<div>
+						<label for="color">Color:</label>
+						<output id="color" name="color"></output>
+					</div>
+					<div data-role="controlgroup" data-type="horizontal" class="buttons">
+						<a href="#create-article" data-role="button" data-icon="gear">Edit</a>
+						<a href="#search-article" data-role="button" data-icon="back">Cancel</a>
+					</div>
+				</fieldset>
+			</section>
+ 
+			<footer data-role="footer" data-position="fixed">
+				<div class="footer_left">
+					<a href="../index.html" data-role="button" data-icon="home">Home</a>
+				</div>
+				<div class="footer_right">
+					<a href="#search-article" data-role="button" data-icon="search">Search</a>
+					<a data-role="button" data-icon="plus" onclick="return aerogear.create()">Create</a>
+				</div>
+			</footer>
+			 
+		</article>
+-->
+		<!-- Create -->
+		<article id="create-article" data-role="page">
+			<header data-role="header" data-theme="a">
+				<h3>Create Project</h3>
+			</header>
+			<section data-role="content">
+				<form name="create-form" id="create-form" data-ajax="false">
+					<fieldset id="create-fieldset">
+						<div>
+							<label for="name">Name:</label>
+							<input id="name" name="name" placeholder="Your Name" type="text"/>
+						</div>
+						<div>
+							<label for="publiclyListed">Publicly Listed</label>
+							<input id="publiclyListed" name="publiclyListed" placeholder="Your Publicly Listed" type="checkbox"/>
+						</div>
+						<div>
+							<label for="color">Color:</label>
+							<input id="color" name="color" placeholder="Your Color" type="color"/>
+						</div>
+						<div id="formMsgs"></div>
+						<div data-role="controlgroup" data-type="horizontal" class="buttons">
+							<input type="submit" name="save" onclick="return aerogear.update()" data-icon="plus" value="Save"/>
+							<a data-role="button" data-icon="delete" onclick="return aerogear.remove()">Delete</a>
+							<a href="#search-article" data-role="button" data-icon="back">Cancel</a>
+						</div>
+					</fieldset>
+				</form>
+			</section>
+			<!--
+			<footer data-role="footer" data-position="fixed">
+				<div class="footer_left">
+					<a href="../index.html" data-role="button" data-icon="home">Home</a>
+				</div>
+				<div class="footer_right">
+					<a href="#search-article" data-role="button" data-icon="search">Search</a>
+				</div>
+			</footer>
+			-->
+		</article>
+		</article>
+		</aside>
+		</section>
+		<footer>
+				 <p>This project was generated from a Maven archetype from JBoss.<br/></p>
+		</footer>
+		</div>
+	</body>
+</html>
